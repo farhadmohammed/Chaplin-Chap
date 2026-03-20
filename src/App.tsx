@@ -150,7 +150,7 @@ export default function App() {
         <SocialButton 
           icon={Instagram} 
           label="Instagram" 
-          href="#" 
+          href="https://www.instagram.com/chaplin.chapp/" 
           color="hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7] hover:border-transparent" 
         />
         <SocialButton 
