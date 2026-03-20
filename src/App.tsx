@@ -116,7 +116,7 @@ export default function App() {
             transition={{ delay: 0.3 }}
             className="kurdish-text text-2xl md:text-3xl text-neutral-200 font-medium leading-relaxed"
           >
-            ...بۆ کاری چاپ ە ڕیکلام لەسەر عەلاگەی نایلۆن و قوماش و کارتۆن و هتد
+            بۆ کاری چاپ و ڕیکلام لەسەر عەلاگەی نایلۆن و قوماش و کارتۆن و هتد...
           </motion.p>
           <motion.p 
             initial={{ opacity: 0 }}
