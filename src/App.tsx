@@ -3,20 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Facebook, Instagram, MessageCircle, Send } from 'lucide-react';
+import { useEffect } from 'react';
+import { Facebook, Instagram } from 'lucide-react';
 import { motion } from 'motion/react';
-
-const TikTokIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z" />
-  </svg>
-);
-
-const SnapchatIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-    <path d="M12 2.3c-3.1 0-5.6 2.2-5.6 5 0 .3 0 .6.1.9-.8.3-1.4.9-1.4 1.7 0 .5.3 1 .7 1.3-.1.3-.2.6-.2.9 0 1.1.9 2 2 2 .2 0 .4 0 .6-.1.8 1.4 2.2 2.3 3.8 2.3s3-1 3.8-2.3c.2.1.4.1.6.1 1.1 0 2-.9 2-2 0-.3-.1-.6-.2-.9.4-.3.7-.8.7-1.3 0-.8-.6-1.4-1.4-1.7.1-.3.1-.6.1-.9 0-2.8-2.5-5-5.6-5zm0 16.7c-3.5 0-6.5 1.5-8.5 3.8-.2.2-.1.5.1.6 1.9 1 5.1 1.6 8.4 1.6s6.5-.6 8.4-1.6c.2-.1.3-.4.1-.6-2-2.3-5-3.8-8.5-3.8z" />
-  </svg>
-);
 
 const WhatsAppIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -39,6 +28,16 @@ const SocialButton = ({ icon: Icon, label, href, color }: { icon: any, label: st
 );
 
 export default function App() {
+  useEffect(() => {
+    console.log("Chaplin Chap App Initialized");
+    // Check if fonts are loaded
+    document.fonts.ready.then(() => {
+      console.log("Fonts loaded successfully");
+    }).catch(err => {
+      console.error("Font loading error:", err);
+    });
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-between py-12 px-4 md:px-8 bg-[#0B0E14] text-white overflow-hidden relative">
       {/* Background Decorative Elements */}
@@ -79,6 +78,8 @@ export default function App() {
               style={{
                 imageRendering: 'auto',
               }}
+              loading="eager"
+              decoding="async"
               referrerPolicy="no-referrer"
               onError={(e) => {
                 // Fallback if image not found
@@ -140,11 +141,11 @@ export default function App() {
       </motion.div>
 
       {/* Social Media Links */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl w-full mb-20 z-10">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl w-full mb-20 z-10">
         <SocialButton 
           icon={Facebook} 
           label="Facebook" 
-          href="#" 
+          href="https://www.facebook.com/chaplin.chapp/" 
           color="hover:bg-[#1877F2] hover:border-[#1877F2]" 
         />
         <SocialButton 
@@ -154,28 +155,10 @@ export default function App() {
           color="hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7] hover:border-transparent" 
         />
         <SocialButton 
-          icon={TikTokIcon} 
-          label="TikTok" 
-          href="#" 
-          color="hover:bg-black hover:border-white/20" 
-        />
-        <SocialButton 
-          icon={SnapchatIcon} 
-          label="Snapchat" 
-          href="#" 
-          color="hover:bg-[#FFFC00] hover:text-black hover:border-[#FFFC00]" 
-        />
-        <SocialButton 
           icon={WhatsAppIcon} 
           label="WhatsApp" 
-          href="#" 
+          href="https://wa.me/9647500657729" 
           color="hover:bg-[#25D366] hover:border-[#25D366]" 
-        />
-        <SocialButton 
-          icon={Send} 
-          label="Contact Us" 
-          href="#" 
-          color="hover:bg-orange-600 hover:border-orange-600" 
         />
       </div>
 
