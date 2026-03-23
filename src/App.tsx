@@ -145,7 +145,7 @@ export default function App() {
         <SocialButton 
           icon={Facebook} 
           label="Facebook" 
-          href="https://www.facebook.com/chaplin.chapp/" 
+          href="https://www.facebook.com/share/1K2JGbtViH/?mibextid=wwXIfr" 
           color="hover:bg-[#1877F2] hover:border-[#1877F2]" 
         />
         <SocialButton 
