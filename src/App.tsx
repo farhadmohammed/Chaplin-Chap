@@ -13,17 +13,19 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
-const SocialButton = ({ icon: Icon, label, href, color }: { icon: any, label: string, href: string, color: string }) => (
+const SocialButton = ({ icon: Icon, label, href, className }: { icon: any, label: string, href: string, className: string }) => (
   <motion.a
     whileHover={{ scale: 1.05, y: -2 }}
     whileTap={{ scale: 0.95 }}
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className={`flex items-center gap-3 px-6 py-3 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:shadow-lg ${color} group`}
+    className={`flex items-center gap-3 px-6 py-4 rounded-2xl border border-white/10 shadow-xl transition-all ${className} group`}
   >
-    <Icon className="w-5 h-5 transition-colors group-hover:text-white" />
-    <span className="font-medium text-sm text-neutral-300 group-hover:text-white">{label}</span>
+    <div className="bg-white/20 p-2 rounded-lg group-hover:bg-white/30 transition-colors">
+      <Icon className="w-5 h-5 text-white" />
+    </div>
+    <span className="font-bold text-base text-white tracking-wide">{label}</span>
   </motion.a>
 );
 
@@ -141,24 +143,24 @@ export default function App() {
       </motion.div>
 
       {/* Social Media Links */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl w-full mb-20 z-10">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl w-full mb-20 z-10">
         <SocialButton 
           icon={Facebook} 
           label="Facebook" 
           href="https://www.facebook.com/share/1K2JGbtViH/?mibextid=wwXIfr" 
-          color="hover:bg-[#1877F2] hover:border-[#1877F2]" 
+          className="bg-[#1877F2] hover:bg-[#166fe5] border-[#1877F2]/20 shadow-[#1877F2]/20" 
         />
         <SocialButton 
           icon={Instagram} 
           label="Instagram" 
           href="https://www.instagram.com/chaplin.chapp/" 
-          color="hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7] hover:border-transparent" 
+          className="bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] border-white/10 shadow-[#ee2a7b]/20" 
         />
         <SocialButton 
           icon={WhatsAppIcon} 
           label="WhatsApp" 
           href="https://wa.me/9647500657729" 
-          color="hover:bg-[#25D366] hover:border-[#25D366]" 
+          className="bg-[#25D366] hover:bg-[#22bf5b] border-[#25D366]/20 shadow-[#25D366]/20" 
         />
       </div>
 
@@ -167,16 +169,18 @@ export default function App() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="text-center space-y-4 border-t border-white/10 pt-12 w-full max-w-2xl z-10"
+        className="text-center space-y-6 border-t border-white/10 pt-16 w-full max-w-2xl z-10"
       >
-        <p className="kurdish-text text-2xl md:text-3xl text-white font-semibold">
-          تۆ شایەنی ئەوەی کە باشترینت هەبێت
-        </p>
-        <p className="kurdish-text text-xl md:text-2xl text-neutral-400 font-medium">
-          ناو و براندەکەت لای ئێمە دەردرەوشێنەوە
-        </p>
+        <div className="space-y-3">
+          <p className="kurdish-text text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-orange-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+            تۆ شایەنی ئەوەی کە باشترینت هەبێت
+          </p>
+          <p className="kurdish-text text-2xl md:text-3xl font-semibold bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(249,115,22,0.2)]">
+            ناو و براندەکەت لای ئێمە دەردرەوشێنەوە
+          </p>
+        </div>
         
-        <div className="pt-8 text-neutral-600 text-xs font-mono uppercase tracking-[0.3em]">
+        <div className="pt-12 text-neutral-600 text-[10px] font-mono uppercase tracking-[0.4em] opacity-50">
           &copy; {new Date().getFullYear()} Chaplin Chap Printing & Advertising
         </div>
       </motion.footer>
