@@ -41,7 +41,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-between py-12 px-4 md:px-8 bg-[#0B0E14] text-white overflow-hidden relative">
+    <div className="min-h-screen flex flex-col items-center justify-between pt-24 pb-12 px-4 md:px-8 bg-[#0B0E14] text-white overflow-hidden relative">
       {/* Background Decorative Elements */}
       <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-orange-600/20 rounded-full blur-[120px]" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-red-600/10 rounded-full blur-[120px]" />
@@ -112,7 +112,7 @@ export default function App() {
         </div>
 
         {/* New Kurdish Text Lines */}
-        <div className="space-y-6 mb-16 max-w-3xl">
+        <div className="space-y-6 mb-4 max-w-3xl">
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -133,17 +133,17 @@ export default function App() {
 
         {/* Original Slogan */}
         <motion.p 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="kurdish-text text-lg text-neutral-400 border-t border-white/5 pt-6"
+          className="kurdish-text text-base font-bold bg-gradient-to-r from-orange-300 via-yellow-200 to-orange-300 bg-clip-text text-transparent border-t border-white/5 pt-2 drop-shadow-[0_0_8px_rgba(253,186,116,0.2)]"
         >
           کوالیتی تەنیا دروشم نیە، لای ئێمە شێوازی کارکردنە
         </motion.p>
       </motion.div>
 
       {/* Social Media Links */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl w-full mb-20 z-10">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl w-full mt-12 mb-20 z-10">
         <SocialButton 
           icon={Facebook} 
           label="Facebook" 
@@ -176,7 +176,7 @@ export default function App() {
             تۆ شایەنی ئەوەی کە باشترینت هەبێت
           </p>
           <p className="kurdish-text text-2xl md:text-3xl font-semibold bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(249,115,22,0.2)]">
-            ناو و براندەکەت لای ئێمە دەردرەوشێنەوە
+            ناو و براندەکەت لای ئێمە دەدرەوشێنەوە
           </p>
         </div>
         
