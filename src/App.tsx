@@ -4,7 +4,7 @@
  */
 
 import { useEffect } from 'react';
-import { Facebook, Instagram } from 'lucide-react';
+import { Facebook, Instagram, Github } from 'lucide-react';
 import { motion } from 'motion/react';
 
 const WhatsAppIcon = () => (
@@ -143,7 +143,7 @@ export default function App() {
       </motion.div>
 
       {/* Social Media Links */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl w-full mt-12 mb-20 z-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl w-full mt-12 mb-20 z-10">
         <SocialButton 
           icon={Facebook} 
           label="Facebook" 
@@ -161,6 +161,12 @@ export default function App() {
           label="WhatsApp" 
           href="https://wa.me/9647500657729" 
           className="bg-[#25D366] hover:bg-[#22bf5b] border-[#25D366]/20 shadow-[#25D366]/20" 
+        />
+        <SocialButton 
+          icon={Github} 
+          label="GitHub" 
+          href="https://github.com/chapchaplin/brand" 
+          className="bg-[#24292e] hover:bg-[#1b1f23] border-white/10 shadow-black/20" 
         />
       </div>
 
