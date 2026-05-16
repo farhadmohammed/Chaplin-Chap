@@ -121,14 +121,16 @@ export default function App() {
           >
             بۆ کاری چاپ و ڕیکلام لەسەر عەلاگەی نایلۆن و قوماش و کارتۆن و هتد...
           </motion.p>
-          <motion.p 
+          <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="kurdish-text text-xl md:text-2xl text-orange-400 font-medium leading-relaxed"
+            className="kurdish-text text-2xl md:text-4xl text-orange-400 font-bold leading-tight space-y-3"
           >
-            با کڕیارەکانت ناوی تۆ بەرنەوە ماڵەوە! چاپی لۆگۆکەت لەسەر عەلاگە، ڕیکلامێکی بێدەنگ بەڵام کاریگەر
-          </motion.p>
+            <p>با کڕیارەکانت ناوی تۆ بەرنەوە ماڵەوە!</p>
+            <p>چاپی لۆگۆکەت لەسەر عەلاگە</p>
+            <p>ڕیکلامێکی بێدەنگ بەڵام کاریگەر</p>
+          </motion.div>
         </div>
 
         {/* Original Slogan */}
